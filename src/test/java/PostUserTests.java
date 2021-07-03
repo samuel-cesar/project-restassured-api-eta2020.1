@@ -43,6 +43,7 @@ public class PostUserTests extends TestBase{
         Response postUserSuccessResponse = registerUserRequest(SPEC, postUser);
         postUserSuccessResponse.
                 then().
+                log().all().
                 assertThat().
                 statusCode(201).
                 body("message", equalTo(Constants.MESSAGE_SUCCESS_INSERT_NEW_USER));
@@ -54,6 +55,7 @@ public class PostUserTests extends TestBase{
         Response postUserFailureSameEmailResponse = registerUserRequest(SPEC, sameEmail2);
         postUserFailureSameEmailResponse.
                 then().
+                log().all().
                 assertThat().
                 statusCode(400).
                 body("message", equalTo(Constants.MESSAGE_FAILED_INSERT_NEW_USER_WITH_THE_SAME_EMAIL));

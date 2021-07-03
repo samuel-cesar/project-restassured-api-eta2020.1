@@ -23,6 +23,7 @@ public class DeleteUserTest extends TestBase{
         Response deleteUserResponse = deleteUserRequest(SPEC, validUser);
         deleteUserResponse.
                 then().
+                log().all().
                 assertThat().
                 statusCode(200).
                 body("message", equalTo(Constants.MESSAGE_SUCCESS_DELETION));

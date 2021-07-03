@@ -53,6 +53,7 @@ public class GetUserTests extends TestBase{
         Response getUserResponse = getUserRequest(SPEC, query);
         getUserResponse.
                 then().
+                log().all().
                 assertThat().
                 statusCode(200).
                 body("quantidade", equalTo(totalUsers));
