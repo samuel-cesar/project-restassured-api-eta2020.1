@@ -17,6 +17,10 @@ public class User {
         this.isAdmin = isAdmin;
     }
 
+    public String getAuthToken() {
+        return authToken;
+    }
+
     public void setUserAuthToken(String authToken){
         this.authToken = authToken;
     }
@@ -31,43 +35,4 @@ public class User {
         userJsonRepresentation.put("password",this.password);
         return userJsonRepresentation.toJSONString();
     }
-
-//    public Response autenticateUser(){
-//        Response loginResponse =
-//                given().
-//                        header("accept", "application/json").
-//                        header("Content-Type", "application/json").
-//                and().
-//                        body(getUserCredentialsAsJson()).
-//                when().post("login");
-//
-//        JsonPath jsonPathEvaluator = loginResponse.jsonPath();
-//        String authToken = jsonPathEvaluator.get("authorization");
-//        setUserAuthToken(authToken);
-//
-//        return loginResponse;
-//    }
-
-//    public Response registerUserRequest(){
-//
-//        JSONObject userJsonRepresentation = new JSONObject();
-//        userJsonRepresentation.put("nome", this.name);
-//        userJsonRepresentation.put("email", this.email);
-//        userJsonRepresentation.put("password", this.password);
-//        userJsonRepresentation.put("administrador", this.isAdmin);
-//
-//
-//        Response response =
-//               given().
-//                       header("accept", "application/json").
-//                       header("Content-Type", "application/json").
-//               and().
-//                       body(userJsonRepresentation.toJSONString()).
-//               when().
-//                       post("http://localhost:3000/usuarios");
-//
-//        return response;
-//    }
-
-
 }

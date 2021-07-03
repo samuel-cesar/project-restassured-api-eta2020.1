@@ -60,5 +60,4 @@ public class UserEndpoint extends RequestBase{
                         delete("usuarios/"+user.userID);
         return deleteUserResponse;
     }
-
 }

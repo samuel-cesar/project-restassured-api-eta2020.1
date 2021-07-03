@@ -42,7 +42,7 @@ public class GetUserTests extends TestBase{
     public Object[][] createTestData() {
         return new Object[][] {
                 {"?nome="+validUser1.name, 1},
-                {"?password="+validUser2.password, 6},
+                {"?password="+validUser2.password, 2},
                 {"?email="+validUser3.email, 1},
                 {"?nome="+invalidUser1.name+"&email="+invalidUser1.email, 0}
         };
