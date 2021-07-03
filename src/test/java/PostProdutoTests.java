@@ -53,6 +53,7 @@ public class PostProdutoTests extends TestBase{
         deleteProductRequest(SPEC, sameProduct1, getApiKey());
     }
 
+    //getApiKey para utilizar nos cenários que precisam de Authorization
     public String getApiKey() {
         return autenticaUser.getAuthToken();
     }
